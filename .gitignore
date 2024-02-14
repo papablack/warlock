@@ -1,0 +1,34 @@
+#node modules
+backend/node_modules/
+frontend/node_modules/
+
+#git modules
+backend/submodules/
+frontend/submodules/
+backend/rws/
+frontend/rws/
+pyscripts/submodules/
+submodules/
+
+#front dynamic content
+frontend/dist/*
+frontend/public/js/*
+!frontend/public/js/cfg/cfg.dist.js
+frontend/build/*
+
+#dynamic content
+backend/dist/*
+
+backend/build/*
+backend/downloads/*
+
+#local env
+backend/src/.env
+backend/trainer-assets/*
+!backend/trainer-assets/.gitkeep
+.vscode
+
+node_modules
+yarn.lock
+
+manager/
