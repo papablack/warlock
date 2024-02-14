@@ -39,7 +39,7 @@ async function initializeApp() {
                 alertify.notify(message, notifType, 5, onConfirm);
                 return;
             case 'alert':
-                alertify.alert('Junction AI Notification', message, onConfirm);
+                alertify.alert('AI Notification', message, onConfirm);
                 return;    
             case 'silent':
                 if(logType == 'warning'){
