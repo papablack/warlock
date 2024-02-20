@@ -1,56 +1,56 @@
-import { RWSannotations, RWSModel } from "rws-js-server";
+import { RWSannotations, RWSModel } from 'rws-js-server';
 
-import IMessage from "./interfaces/IMessage";
+import IMessage from './interfaces/IMessage';
 import 'reflect-metadata';
 
 const { TrackType } = RWSannotations.modelAnnotations;
 
 class Message extends RWSModel<Message> implements IMessage {
   @TrackType(String, { required: false })
-  convo_id: string;
+      convo_id: string;
 
   @TrackType(String, { required: true })
-  content: string;
+      content: string;
 
   @TrackType(String)
-  author: string;
+      author: string;
 
   @TrackType(String)
-  model_id: string;
+      model_id: string;
 
   @TrackType(Number)
-  score: number;
+      score: number;
 
   @TrackType(Boolean)
-  userMessage: boolean = false;
+      userMessage: boolean = false;
   
   @TrackType(String)
-  type: string;
+      type: string;
 
   @TrackType(Date, { required: true })
-  created_at: Date;
+      created_at: Date;
   
   @TrackType(Date)
-  updated_at: Date;
+      updated_at: Date;
 
   @TrackType(String)
-  user_id: string;
+      user_id: string;
 
   @TrackType(String)
-  context_id: string;
+      context_id: string;
 
   @TrackType(Object)
-  var_storage: any;
+      var_storage: any;
 
   static _collection = 'jchatter_message';
 
   constructor(data?: IMessage) {   
-    super(data);    
+      super(data);    
 
-    if(!this.created_at){
-      this.created_at = new Date();
-      this.updated_at = new Date();
-    }
+      if(!this.created_at){
+          this.created_at = new Date();
+          this.updated_at = new Date();
+      }
   }
 }
 

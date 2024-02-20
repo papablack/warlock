@@ -52,8 +52,6 @@ fi
 
 source venv/bin/activate    
 
-#bash /scripts/run-text-generation-webui.sh &
-
 bash /scripts/run_llm.sh 
 
 if [[ -d $ROOT_DIR/stable-diffusion-webui ]]; then
@@ -63,8 +61,6 @@ else
 fi
 
 source venv/bin/activate
-
-#python3 launch.py --port 3001 --listen
 
 bash /scripts/run_sd.sh   
 

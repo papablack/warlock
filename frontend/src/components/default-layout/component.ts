@@ -1,6 +1,6 @@
 import { RWSViewComponent, RWSView, observable, _ROUTING_EVENT_NAME, IRoutingEvent } from 'rws-js-client';
 
-import { SiteMenu } from "../site-menu/component";
+import { SiteMenu } from '../site-menu/component';
 
 import EV from '../../events/events';
 
@@ -18,25 +18,25 @@ class DefaultLayout extends RWSViewComponent {
 
   connectedCallback(): void 
   {
-    super.connectedCallback();    
+      super.connectedCallback();    
     
-    this.$emit(_ROUTING_EVENT_NAME, (route_event: IRoutingEvent) => {
-      this.currentPage = route_event.routeName;
-    });
+      this.$emit(_ROUTING_EVENT_NAME, (route_event: IRoutingEvent) => {
+          this.currentPage = route_event.routeName;
+      });
 
-    this.$emit(EV.menu.toggle, (route_event: IRoutingEvent) => {
-      this.menuOpen = !this.menuOpen;
-    });
+      this.$emit(EV.menu.toggle, (route_event: IRoutingEvent) => {
+          this.menuOpen = !this.menuOpen;
+      });
 
-    this.on<{item: string}>('routing.url.changed', (event) => {
-      const url = event.detail.item;
+      this.on<{item: string}>('routing.url.changed', (event) => {
+          const url = event.detail.item;
       
-      this.currentUrl = url;
+          this.currentUrl = url;
       
-  });
+      });
   }
 }
 
 DefaultLayout.defineComponent();
 
-export { DefaultLayout }
+export { DefaultLayout };

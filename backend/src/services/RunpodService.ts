@@ -1,6 +1,6 @@
-import { RWSService } from "rws-js-server";
+import { RWSService } from 'rws-js-server';
 
-import IVMConfig from "../interfaces/IRunpodCfg";
+import IVMConfig from '../interfaces/IRunpodCfg';
 
 
 class RunpodService extends RWSService {

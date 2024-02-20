@@ -1,5 +1,5 @@
 import RWSClient, { NotifyUiType, NotifyLogType } from 'rws-js-client';
-//@ts-ignore
+//@ts-expect-error no-types
 import alertify from 'alertifyjs';
 
 import './styles/main.scss';
@@ -25,31 +25,31 @@ async function initializeApp() {
 
     theClient.setNotifier((message: string, logType: NotifyLogType, uiType: NotifyUiType = 'notification', onConfirm: (params: any) => void) => {
         switch(uiType){
-            case 'notification':
-                let notifType = 'success';
+        case 'notification':
+            let notifType = 'success';
 
-                if(logType === 'error'){
-                    notifType = 'error';
-                }
+            if(logType === 'error'){
+                notifType = 'error';
+            }
 
-                if(logType === 'warning'){
-                    notifType = 'warning';
-                }
+            if(logType === 'warning'){
+                notifType = 'warning';
+            }
 
-                alertify.notify(message, notifType, 5, onConfirm);
-                return;
-            case 'alert':
-                alertify.alert('AI Notification', message, onConfirm);
-                return;    
-            case 'silent':
-                if(logType == 'warning'){
-                    console.warn(message);
-                }else if(logType == 'error'){
-                    console.error(message);
-                }else{
-                    console.log(message);
-                }            
-                return;    
+            alertify.notify(message, notifType, 5, onConfirm);
+            return;
+        case 'alert':
+            alertify.alert('AI Notification', message, onConfirm);
+            return;    
+        case 'silent':
+            if(logType == 'warning'){
+                console.warn(message);
+            }else if(logType == 'error'){
+                console.error(message);
+            }else{
+                console.log(message);
+            }            
+            return;    
         }
     });
     (window as any).RWSClient = theClient;    

@@ -3,8 +3,8 @@ export default {
         click: 'chat.item:click'
     },
     context: {
-       change: 'chat.context:change',
-       convo_id_set: 'chat.context:id_set'
+        change: 'chat.context:change',
+        convo_id_set: 'chat.context:id_set'
     },
     message: {
         send: 'chat.message:send',
@@ -27,4 +27,4 @@ export default {
             toggled: 'global.chat:toggled',            
         }
     }
-}
+};

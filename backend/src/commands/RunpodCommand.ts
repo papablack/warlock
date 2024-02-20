@@ -1,14 +1,11 @@
 
 import { ConsoleService, RWSCommand, ICmdParams } from 'rws-js-server';
-import fs from 'fs';
-import path from 'path';
 
 
-const { log, warn, error, color, rwsLog } = ConsoleService;
+const { error } = ConsoleService;
 
-const executionDir = process.cwd();
-const moduleCfgDir = `${executionDir}/node_modules/.rws`;
-const cfgPathFile = `${moduleCfgDir}/_cfg_path`;  
+// const executionDir = process.cwd();
+// const moduleCfgDir = `${executionDir}/node_modules/.rws`;
 
 type IRunpodSubCommand = 'deploy' | 'delete' | string;
 
@@ -29,9 +26,9 @@ class RunpodCommand extends RWSCommand
 
     async execute(params?: ICmdParams): Promise<void>
     {       
-        const {  subCmd, apiCmd, apiArg, extraParams } = this.getCommandParameters(params);
+        const {  subCmd } = this.getCommandParameters(params);
 
-       switch(subCmd){
+        switch(subCmd){
         case 'start':
             await this.start(params);            
             return;       
@@ -49,4 +46,4 @@ class RunpodCommand extends RWSCommand
 }
 
 export default RunpodCommand.createCommand();
-export { IRunpodParamsReturn }
+export { IRunpodParamsReturn };

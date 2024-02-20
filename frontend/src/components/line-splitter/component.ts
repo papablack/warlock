@@ -8,11 +8,11 @@ interface ILineInfo {
 }
 
 const returnTag = (cnt: string, found: boolean = true) => {
-  return {
-    content: cnt,
-    found
-  }
-}
+    return {
+        content: cnt,
+        found
+    };
+};
 
 @RWSView('line-splitter')
 class LineSplitter extends RWSViewComponent {
@@ -25,104 +25,104 @@ class LineSplitter extends RWSViewComponent {
   private allowedHTMLTags: string[] = ['dl', 'dt', 'dd', 'br', 'blockquote', 'span', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'strong', 'i', 'small', 'u'];
 
   static makeRegex = (tagName: string): RegExp => {
-    return new RegExp(`<${tagName}>(.*?)<\/${tagName}>`, "gs");
-  }
+      return new RegExp(`<${tagName}>(.*?)</${tagName}>`, 'gs');
+  };
 
-  static _allowed_tags: { [key:string]: (cnt: string, key: string) => ILineInfo } = {
-    'blockquote': (content: string, key: string): ILineInfo => {
-      const regex = LineSplitter.makeRegex(key);
+  static _allowed_tags: { [key: string]: (cnt: string, key: string) => ILineInfo } = {
+      'blockquote': (content: string, key: string): ILineInfo => {
+          const regex = LineSplitter.makeRegex(key);
 
-      const matches = content.match(regex);
+          const matches = content.match(regex);
       
-      if (matches) {
-        console.log('f',matches[0])
-        return returnTag(content.replace(regex, `<${key}><div class="quote-cnt">$1</div></${key}>`));   
-      }else{
-        return returnTag(content, false);
-      }      
-    }
-  }
+          if (matches) {
+              console.log('f',matches[0]);
+              return returnTag(content.replace(regex, `<${key}><div class="quote-cnt">$1</div></${key}>`));   
+          }else{
+              return returnTag(content, false);
+          }      
+      }
+  };
 
   parseTags(line: string): string | ViewTemplate
   {    
-    let output: string = line.trim();
+      let output: string = line.trim();
 
-    this.allowedHTMLTags = this.allowedHTMLTags.concat(this.allowedTags.split(','));
+      this.allowedHTMLTags = this.allowedHTMLTags.concat(this.allowedTags.split(','));
 
-    output = this.enforceAllowedTags(output);
-    output = output.replace(/\n\n/g, '\n');
+      output = this.enforceAllowedTags(output);
+      output = output.replace(/\n\n/g, '\n');
 
-    // console.log('preparse', line);
-    let found = false;
+      // console.log('preparse', line);
+      //   let found = false;
 
-    for(const tag in LineSplitter._allowed_tags){             
-      const lineInfo: ILineInfo = LineSplitter._allowed_tags[tag](output, tag);
+      for(const tag in LineSplitter._allowed_tags){             
+          const lineInfo: ILineInfo = LineSplitter._allowed_tags[tag](output, tag);
 
-      if(lineInfo.found){        
-        output = lineInfo.content;
-        found = true;
-      }
-    }    
+          if(lineInfo.found){        
+              output = lineInfo.content;
+              //   found = true;
+          }
+      }    
 
-    output = output.replace(/<.*>([\s\S]*?)<\/.*>/g, (match: string) => {
-      return match.replace(/\n/g, '');
-    });
+      output = output.replace(/<.*>([\s\S]*?)<\/.*>/g, (match: string) => {
+          return match.replace(/\n/g, '');
+      });
 
-    output = output.replace(/\n/g, '<br/>');
+      output = output.replace(/\n/g, '<br/>');
 
-    output = output.replace(/<\/p><br\/>/g, '</p>');
+      output = output.replace(/<\/p><br\/>/g, '</p>');
 
-    output = output.replace(/<\/h1><br\/>/g, '</h1>');
-    output = output.replace(/<\/h2><br\/>/g, '</h2>');
-    output = output.replace(/<\/h3><br\/>/g, '</h3>');
+      output = output.replace(/<\/h1><br\/>/g, '</h1>');
+      output = output.replace(/<\/h2><br\/>/g, '</h2>');
+      output = output.replace(/<\/h3><br\/>/g, '</h3>');
 
-    output = output.replace(/<br\/><h1>/g, '<h1>');
-    output = output.replace(/<br\/><h2>/g, '<h2>');
-    output = output.replace(/<br\/><h3>/g, '<h3>');
+      output = output.replace(/<br\/><h1>/g, '<h1>');
+      output = output.replace(/<br\/><h2>/g, '<h2>');
+      output = output.replace(/<br\/><h3>/g, '<h3>');
 
-    return html`${output}`;
+      return html`${output}`;
   }
 
   private enforceAllowedTags(htmlText: string): string
   {
-    // Create a regular expression pattern to match HTML tags
-    const tagPattern = /<\s*\/?\s*([^\s>\/]+)(\s+[^>]*)?>/g;
+      // Create a regular expression pattern to match HTML tags
+      const tagPattern = /<\s*\/?\s*([^\s>/]+)(\s+[^>]*)?>/g;
 
-    // Replace any tags in the htmlText that are not in allowedHTMLTags array
-    const sanitizedText = htmlText.replace(tagPattern, (match, tag, attributes) => {
-        const lowerCaseTag = tag.toLowerCase();
+      // Replace any tags in the htmlText that are not in allowedHTMLTags array
+      const sanitizedText = htmlText.replace(tagPattern, (match, tag, attributes) => {
+          const lowerCaseTag = tag.toLowerCase();
 
-        if (this.allowedHTMLTags.includes(lowerCaseTag)) {
-            return match; // Return the original tag if it's allowed
-        } else {
-            // Replace the disallowed tag with an empty string
-            return '';
-        }
-    });
+          if (this.allowedHTMLTags.includes(lowerCaseTag)) {
+              return match; // Return the original tag if it's allowed
+          } else {
+              // Replace the disallowed tag with an empty string
+              return '';
+          }
+      });
 
-    return sanitizedText;
+      return sanitizedText;
   }
 
   splitLines(): void
   {    
-    this.content = this.parseTags(this.text);    
+      this.content = this.parseTags(this.text);    
   }
 
   textChanged(oldVal: string, newVal: string)
   {    
-    if(newVal){
-      this.splitLines();
-    }
+      if(newVal){
+          this.splitLines();
+      }
   }
 
   addClassChanged(oldVal: string, newVal: string)
   {
-    if(newVal){
-      this.addClass = newVal;
-    }
+      if(newVal){
+          this.addClass = newVal;
+      }
   }
 }
 
 LineSplitter.defineComponent();
 
-export { LineSplitter }
+export { LineSplitter };

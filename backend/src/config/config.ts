@@ -1,7 +1,7 @@
-import { ConsoleService, IAppConfig } from "rws-js-server";
+import { IAppConfig } from 'rws-js-server';
 
-import JWTUser from "../user/model";
-import { getModels } from "../models";
+import JWTUser from '../user/model';
+import { getModels } from '../models';
 import ControllerList from '../controllers/index';
 import routes from '../routing/routes';
 import ws_routes from '../routing/sockets';
@@ -62,5 +62,5 @@ export default (): IAppConfig => {
         aws_lambda_role: null,
         aws_lambda_bucket: null,
         pub_dir: PUB_FOLDER,        
-    }
-}
+    };
+};

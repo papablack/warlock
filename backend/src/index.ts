@@ -1,5 +1,5 @@
-import { serverInit, ConsoleService, getAppConfig } from "rws-js-server";
-import config from './config/config'
+import { serverInit, ConsoleService } from 'rws-js-server';
+import config from './config/config';
 
 // import path from 'path';
 
@@ -10,7 +10,7 @@ async function main(){
 }
 
 main().then(() => {
-    ConsoleService.log("Initialization complete");
+    ConsoleService.log('Initialization complete');
 }).catch((e) => {
     ConsoleService.error(e);
     console.error(e);

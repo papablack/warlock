@@ -1,12 +1,11 @@
-import { RWSService } from "rws-js-server";
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 import { v4 as uuid } from 'uuid';
 
 async function findClosestFolder(folderName: string, currentPath: string): Promise<string | null> 
 {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
         const possibleFolderPath = path.join(currentPath, folderName);
         if (fs.existsSync(possibleFolderPath) && fs.statSync(possibleFolderPath).isDirectory()) {
             resolve(possibleFolderPath);
@@ -17,7 +16,7 @@ async function findClosestFolder(folderName: string, currentPath: string): Promi
             resolve(null); // Reached the root directory without finding the folder
         }
     
-        resolve(await findClosestFolder(folderName, parentPath));
+        findClosestFolder(folderName, parentPath).then((res) => {resolve(res);});
     });
 }
 

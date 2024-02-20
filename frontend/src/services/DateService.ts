@@ -34,8 +34,8 @@ class DateService extends RWSService {
     }
 
     diff(newerDate: DateInputType, olderDate: DateInputType, outputUnit: unitOfTime.Diff = 'days'): number {
-        let momentNewer: Moment = DateService.makeMoment(newerDate);
-        let momentOlder: Moment = DateService.makeMoment(olderDate);
+        const momentNewer: Moment = DateService.makeMoment(newerDate);
+        const momentOlder: Moment = DateService.makeMoment(olderDate);
 
         return momentNewer.diff(momentOlder, outputUnit);
     }

@@ -1,4 +1,4 @@
-import { RWSView, RWSViewComponent } from 'rws-js-client';
+import { RWSViewComponent } from 'rws-js-client';
 import {css, html} from '@microsoft/fast-element';
 const styles = css`.loader {
     width: 74px;
@@ -65,11 +65,11 @@ const styles = css`.loader {
     }
   }`;
 
-  const template = html`<div class="loader"></div>`;
+const template = html`<div class="loader"></div>`;
 
 class Loader extends RWSViewComponent {
 
-    static definition = { name: 'the-loader', styles, template }
+    static definition = { name: 'the-loader', styles, template };
   
     connectedCallback(): void {
         super.connectedCallback();
@@ -78,4 +78,4 @@ class Loader extends RWSViewComponent {
 
 Loader.defineComponent();
 
-export { Loader }
+export { Loader };

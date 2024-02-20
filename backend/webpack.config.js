@@ -1,20 +1,14 @@
 const path = require('path');
-const keysTransformer = require('ts-transformer-keys/transformer').default;
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const  RWSWebPackSettings  = require('rws-js-server/rws.webpack.config');
+const  RWSWebpackWrapper  = require('rws-js-server/rws.webpack.config');
 
-RWSWebPackSettings.resolve.plugins = [
-  new TsconfigPathsPlugin({configFile: './tsconfig.json'})
-]
+const executionDir = process.cwd();
 
-RWSWebPackSettings.output.path = path.resolve(__dirname, 'build');
-RWSWebPackSettings.output.filename = 'warlock.server.js',
-
-
-RWSWebPackSettings.devtool = 'source-map';
-RWSWebPackSettings.mode = 'development';
-
-// console.log(RWSWebPackSettings);
-
-module.exports = RWSWebPackSettings;
+module.exports = RWSWebpackWrapper({
+  dev: true,  
+  tsConfigPath: executionDir + '/tsconfig.json',
+  entry: `${executionDir}/src/index.ts`,
+  executionDir: executionDir,  
+  outputDir:  path.resolve(executionDir, 'build'),
+  outputFileName: 'warlock.server.js'
+});

@@ -1,4 +1,4 @@
-import { JwtPayload } from "jsonwebtoken";
+import { JwtPayload } from 'jsonwebtoken';
 
 
 const _fill = (object: JWTUser, data: any): void => {
@@ -7,7 +7,7 @@ const _fill = (object: JWTUser, data: any): void => {
             (object as any)[key] = data[key];
         }
     }        
-}
+};
 
 class JWTUser {
     mongoId: string;
