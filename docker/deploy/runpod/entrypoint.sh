@@ -4,6 +4,6 @@ if [ ! "$SCRIPTS_DIR" ]; then
     export SCRIPTS_DIR=/scripts    
 fi
 
-chmod +x  ${SCRIPTS_DIR:-/}/*
+chmod -R +x  ${SCRIPTS_DIR}
 
-exec ${SCRIPTS_DIR:-/}/start.sh
+exec ${SCRIPTS_DIR}/start.sh

@@ -14,7 +14,7 @@ fi
 # service nginx start
 
 mkdir -p $ROOT_DIR/notebooks
-sh /scripts/jupyter_start.sh
+bash /scripts/jupyter_start.sh
 
 chmod -R 777 $ROOT_DIR
 cd $ROOT_DIR

@@ -22,6 +22,9 @@ backend/dist/*
 backend/build/*
 backend/downloads/*
 
+backend/rws
+frontend/rws
+
 #local env
 backend/src/.env
 backend/trainer-assets/*
