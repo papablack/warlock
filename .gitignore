@@ -13,7 +13,7 @@ submodules/
 #front dynamic content
 frontend/dist/*
 frontend/public/js/*
-!frontend/public/js/cfg/cfg.dist.js
+!frontend/public/js/cfg/cfg.js.dist
 frontend/build/*
 
 #dynamic content
