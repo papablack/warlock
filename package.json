@@ -5,19 +5,19 @@
     "scripts": {
         "preinstall": "node preinstall.js",
         "postinstall": "node postinstall.js"
-    },    
+    },
     "author": "skygate",
     "license": "ISC",
     "private": true,
     "dependencies": {
-        "eslint-plugin-unused-imports": "^3.1.0",
         "@typescript-eslint/eslint-plugin": "^7.0.1",
         "@typescript-eslint/parser": "^7.0.1",
         "chalk": "3.0.0",
-        "eslint": "^8.56.0"
+        "eslint": "^8.56.0",
+        "eslint-plugin-unused-imports": "^3.1.0"
     },
     "workspaces": [
         "frontend",
-        "backend"    
+        "backend"
     ]
 }

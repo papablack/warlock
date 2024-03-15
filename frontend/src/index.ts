@@ -22,6 +22,7 @@ async function initializeApp() {
     theClient.setNotifier(notifierMethod);
     theClient.assignClientToBrowser();   
 
+    await theClient.onDOMLoad();
     theClient.start((window as any)._RWS_CFG);
 }
 
