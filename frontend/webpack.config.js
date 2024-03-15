@@ -15,10 +15,10 @@ module.exports = RWSWebpackWrapper({
   publicDir:  path.resolve(executionDir, 'public'),
   outputDir:  path.resolve(executionDir, 'build'),
   outputFileName: 'warlock.client.js',
+  parted: true,
   copyToDir: {
     './public/js/' : [
-      './build/warlock.client.js',
-      './build/warlock.client.js.map',
+      './build',    
       './src/styles/compiled/main.css'
     ]
   },

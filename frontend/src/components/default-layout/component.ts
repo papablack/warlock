@@ -1,10 +1,9 @@
 import { RWSViewComponent, RWSView, observable, _ROUTING_EVENT_NAME, IRoutingEvent } from 'rws-js-client';
 
-import { SiteMenu } from '../site-menu/component';
-
 import EV from '../../events/events';
+import { RouterComponent } from 'rws-js-client/src/components/router/component';
 
-SiteMenu;
+RouterComponent;
 
 @RWSView('default-layout')
 class DefaultLayout extends RWSViewComponent {  
@@ -31,8 +30,7 @@ class DefaultLayout extends RWSViewComponent {
       this.on<{item: string}>('routing.url.changed', (event) => {
           const url = event.detail.item;
       
-          this.currentUrl = url;
-      
+          this.currentUrl = url;      
       });
   }
 }

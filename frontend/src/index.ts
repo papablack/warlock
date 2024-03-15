@@ -7,7 +7,6 @@ import routes from './routing/routes';
 
 import { backendRoutes } from './backendImport';
 import notifierMethod from './_notifier';
-import initComponents from './application/_initComponents';
 
 async function initializeApp() {
     const theClient = RWSContainer().get(RWSClient);
@@ -17,7 +16,7 @@ async function initializeApp() {
     theClient.addRoutes(routes);    
     
     theClient.onInit(async () => {
-        initComponents();
+        // initComponents();
     });    
 
     theClient.setNotifier(notifierMethod);
