@@ -6,6 +6,6 @@ import { ServersPage } from '../pages/servers/component';
 
 
 export default {
-    '/': renderRouteComponent('Home page', HomePage, { opened: true, dev: true}),  
-    '/servers': renderRouteComponent('Home page', ServersPage, { opened: true, dev: true}),  
+    '/': renderRouteComponent('Home page', HomePage),  
+    '/servers': renderRouteComponent('Servers page', ServersPage),  
 };
