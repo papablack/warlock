@@ -12,7 +12,7 @@
       "resolveJsonModule": true,
       "outDir": "dist",
       "strictNullChecks": false,    
-      "allowSyntheticDefaultImports": true,
+      "allowSyntheticDefaultImports": true,      
       "paths": {                 
       }
     },

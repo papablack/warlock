@@ -4,7 +4,7 @@ import config from './config/config';
 // import path from 'path';
 
 async function main(){            
-    await serverInit(config());    
+    await serverInit(config());
 
     //custom cfg
 }

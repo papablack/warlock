@@ -6,7 +6,4 @@ export default () => {
     LineSplitter;
     DefaultLayout;
     Loader;
-
-
-    // registerRWSComponents();
 };

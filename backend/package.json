@@ -7,19 +7,20 @@
         "watch:run": "nodemon \"./build/warlock.server.js\" --watch \"./build\"",
         "watch:transpile": "DEBUG=socket.io:server webpack --config webpack.config.js --watch",
         "build": "DEBUG=socket.io:server webpack --config webpack.config.js --output-path ./build",
-        "run:server": "node build/warlock.server.js",
+        "start": "node build/warlock.server.js",
         "hello": "rws hello user=$USER",
         "test": "ts-mocha -r tsconfig-paths/register --config ./tests/tsconfig.json 'tests/**/*.test.ts'"
     },
     "main": "src/index.ts",
     "author": "skygate",
     "license": "ISC",
-    "dependencies": {    
+    "dependencies": {
         "compression": "^1.7.4",
         "dotenv": "^16.3.1",
+        "fastify": "^4.26.1",
         "jsonwebtoken": "9.0.2",
         "nodemon": "^1.12.1",
-        "npm-run-all": "^4.1.1",        
+        "npm-run-all": "^4.1.1",
         "puppeteer": "^21.0.3",
         "reflect-metadata": "^0.2.1",
         "rws-js-server": "*",

@@ -7,7 +7,7 @@ async function afterInstall(){
     if(process.env.warlock_NO_LIFECYCLE === 'Yes' ){
         console.error('warlock ignoring postinstall');
         return;
-    }    
+    }
 
     await tools.runCommand("rws init", path.resolve(__dirname, 'backend'));
     await tools.runCommand("yarn build", path.resolve(__dirname, 'backend'));

@@ -38,7 +38,8 @@ export default (): IAppConfig => {
         features: {
             ws_enabled: true,
             routing_enabled: true,
-            ssl: APP_SSL
+            ssl: APP_SSL,
+            auth: false
         },
         mongo_url: dbString,
         mongo_db: DB_NAME,

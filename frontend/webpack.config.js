@@ -16,13 +16,10 @@ module.exports = RWSWebpackWrapper({
   outputDir:  path.resolve(executionDir, 'build'),
   outputFileName: 'warlock.client.js',
   copyToDir: {
-    '../public/js/' : [
+    './public/js/' : [
       './build/warlock.client.js',
       './build/warlock.client.js.map',
       './src/styles/compiled/main.css'
     ]
   },
-  plugins: [
-   
-  ],
 });
