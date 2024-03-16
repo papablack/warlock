@@ -6,6 +6,10 @@
 	path = frontend/rws
 	url = git@github.com:papablack/rws-client.git
 
+[submodule "RWS-project-creator"]
+	path = project-creator
+	url = git@github.com:papablack/rws-project-creator.git
+
 [submodule "RWS-manager"]
 	path = manager
 	url = git@github.com:papablack/rws-manager.git
