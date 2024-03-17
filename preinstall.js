@@ -24,8 +24,6 @@ function beforeInstall(){
         console.error('warlock ignoring preinstall');
         return;
     }
-
-    removeDirectory(`${currentDir}/backend/node_modules`);
 }
 
 beforeInstall();

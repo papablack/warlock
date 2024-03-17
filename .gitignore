@@ -10,8 +10,7 @@ frontend/rws/
 pyscripts/submodules/
 submodules/
 
-manager/
-project-creator/
+@rws/
 
 #front dynamic content
 frontend/dist/*

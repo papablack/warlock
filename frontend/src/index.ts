@@ -1,17 +1,17 @@
-import RWSClient, { RWSContainer } from 'rws-js-client';
+import RWSClient, { RWSContainer } from '@rws-framework/client';
 
 
 import './styles/main.scss';
 
 import routes from './routing/routes';
 
-import { backendRoutes } from './backendImport';
+import backendImports from './backendImport';
 import notifierMethod from './_notifier';
 
 async function initializeApp() {
     const theClient = RWSContainer().get(RWSClient);
 
-    theClient.setBackendRoutes(backendRoutes());
+    theClient.setBackendRoutes(backendImports.backendRoutes());
     theClient.enableRouting();
     theClient.addRoutes(routes);    
     

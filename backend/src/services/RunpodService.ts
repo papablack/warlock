@@ -1,4 +1,4 @@
-import { RWSService } from 'rws-js-server';
+import { RWSService } from '@rws-framework/server';
 
 import IVMConfig from '../interfaces/IRunpodCfg';
 

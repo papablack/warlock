@@ -7,9 +7,13 @@
 	url = git@github.com:papablack/rws-client.git
 
 [submodule "RWS-project-creator"]
-	path = project-creator
+	path = @rws/project-creator
 	url = git@github.com:papablack/rws-project-creator.git
 
 [submodule "RWS-manager"]
-	path = manager
+	path = @rws/manager
 	url = git@github.com:papablack/rws-manager.git
+
+[submodule "RWS-console"]
+	path = @rws/console
+	url = git@github.com:papablack/rws-console.git	

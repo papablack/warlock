@@ -1,5 +1,5 @@
 
-import { ConsoleService, RWSCommand, ICmdParams } from 'rws-js-server';
+import { ConsoleService, RWSCommand, ICmdParams } from '@rws-framework/server';
 
 
 const { error } = ConsoleService;

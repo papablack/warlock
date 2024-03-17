@@ -1,5 +1,5 @@
 {
-    "name": "ai_trainer_root",
+    "name": "warlock_root",
     "version": "1.0.0",
     "description": "",
     "scripts": {
@@ -10,10 +10,13 @@
     "license": "ISC",
     "private": true,
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^7.0.1",
-        "@typescript-eslint/parser": "^7.0.1",
-        "chalk": "3.0.0",
-        "eslint": "^8.56.0",
+        "chalk": "3.0.0"
+    },
+    "devDependencies": {
+        "@rws-framework/console": "*",
+        "@typescript-eslint/eslint-plugin": "^7.2.0",
+        "@typescript-eslint/parser": "^7.2.0",
+        "eslint": "^8.57.0",
         "eslint-plugin-unused-imports": "^3.1.0"
     },
     "workspaces": [
