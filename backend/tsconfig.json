@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "baseUrl": ".",
+      "baseUrl": "../",
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "target": "ES2018",
@@ -16,6 +16,6 @@
       "paths": {                 
       }
     },
-    "include": ["./src"],  
+    "include": ["./src/index.ts"],  
     "exclude": []
   }

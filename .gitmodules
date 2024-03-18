@@ -1,10 +1,14 @@
 [submodule "RWS-backend"]
-	path = backend/rws
+	path = @rws/server
 	url = git@github.com:papablack/rws.git
 
 [submodule "RWS-frontend"]
-	path = frontend/rws
+	path = @rws/client
 	url = git@github.com:papablack/rws-client.git
+
+[submodule "RWS-nest-interconnectors"]
+	path = @rws/nest-interconnectors
+	url = git@github.com:papablack/rws-nest-interconnectors.git	
 
 [submodule "RWS-project-creator"]
 	path = @rws/project-creator
@@ -17,3 +21,11 @@
 [submodule "RWS-console"]
 	path = @rws/console
 	url = git@github.com:papablack/rws-console.git	
+
+[submodule "RWS-browser-router"]
+	path = @rws/browser-router
+	url = git@github.com:papablack/rws-browser-router.git		
+
+[submodule "RWS-console-vis"]
+	path = @rws/console-vis
+	url = git@github.com:papablack/rws-console-vis.git		

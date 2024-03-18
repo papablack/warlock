@@ -1,16 +1,14 @@
+#docker
+docker/deploy/.env
+
 #node modules
 backend/node_modules/
 frontend/node_modules/
+node_modules
 
 #git modules
-backend/submodules/
-frontend/submodules/
-backend/rws/
-frontend/rws/
-pyscripts/submodules/
-submodules/
-
 @rws/
+!@rws/sample-pkg
 
 #front dynamic content
 frontend/dist/*
@@ -18,26 +16,19 @@ frontend/public/js/*
 !frontend/public/js/cfg/cfg.js.dist
 frontend/build/*
 
-#dynamic content
+#back dynamic content
 backend/dist/*
-
 backend/build/*
 backend/downloads/*
-
-backend/rws
-frontend/rws
-
-#local env
 backend/src/.env
 backend/trainer-assets/*
 !backend/trainer-assets/.gitkeep
-.vscode
 
-node_modules
+#pkgs
 yarn.lock
 
-manager/
+#IDE
+.vscode
 
+#other
 workspace/
-
-docker/deploy/.env
