@@ -3,7 +3,6 @@ import RWSClient, { RWSContainer } from '@rws-framework/client';
 
 import './styles/main.scss';
 
-import routes from './routing/routes';
 
 import backendImports from './backendImport';
 import notifierMethod from './_notifier';
@@ -13,7 +12,7 @@ async function initializeApp() {
 
     theClient.setBackendRoutes(backendImports.backendRoutes());
     theClient.enableRouting();
-    theClient.addRoutes(routes);    
+    // theClient.addRoutes(routes);    
     
     theClient.onInit(async () => {
         // initComponents();
