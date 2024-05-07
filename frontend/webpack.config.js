@@ -5,19 +5,19 @@ const RWSWebpackWrapper  = require('@rws-framework/client/rws.webpack.config');
 const executionDir = process.cwd();
 
 module.exports = RWSWebpackWrapper({
-  dev: true,
+  dev: false,
   hot: false,
   report: false,
   tsConfigPath: executionDir + '/tsconfig.json',
   entry: `${executionDir}/src/index.ts`,
   executionDir: executionDir,
   publicDir:  path.resolve(executionDir, 'public'),
-  outputDir:  path.resolve(executionDir, 'build'),
-  outputFileName: 'warlock.client.js',
+  outputDir:  path.resolve(executionDir, 'public', 'js'),
+  outputFileName: 'warlock.client.js',  
   parted: true,
-  copyToDir: {
-    './public/js/' : [
-      './build',    
+  partedDirUrlPrefix: '/js',
+  copyAssets: {
+    './public/js/' : [      
       './src/styles/compiled/main.css'
     ]
   },

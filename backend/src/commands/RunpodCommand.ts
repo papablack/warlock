@@ -21,7 +21,7 @@ interface IRunpodParamsReturn {
 class RunpodCommand extends RWSCommand 
 {
     constructor(){
-        super('runpod', module);
+        super('runpod');
     }
 
     async execute(params?: ICmdParams): Promise<void>

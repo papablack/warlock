@@ -1,13 +1,12 @@
 import { RWSViewComponent, RWSView } from '@rws-framework/client';
 import {  observable  } from '@microsoft/fast-element';
 
-
 interface ILink {
   label: string;
   url: string;
 }
 
-@RWSView('site-menu')
+@RWSView('site-menu', {ignorePackaging: true})
 class SiteMenu extends RWSViewComponent {
 
   @observable links: ILink[] = [

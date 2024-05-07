@@ -7,6 +7,7 @@ import routes from './routing/routes';
 
 import backendImports from './backendImport';
 import notifierMethod from './_notifier';
+import _initComponents from './application/_initComponents';
 
 async function initializeApp() {
     const theClient = RWSContainer().get(RWSClient);
@@ -16,14 +17,17 @@ async function initializeApp() {
     theClient.addRoutes(routes);    
     
     theClient.onInit(async () => {
-        // initComponents();
+        _initComponents(theClient.appConfig.get('parted'));
     });    
 
     theClient.setNotifier(notifierMethod);
     theClient.assignClientToBrowser();   
 
-    await theClient.onDOMLoad();
-    theClient.start((window as any)._RWS_CFG);
+    theClient.start({      
+        partedPrefix: 'rws',  
+        partedDirUrlPrefix: '/js',
+        parted: true
+    });  
 }
 
 initializeApp().catch(console.error);

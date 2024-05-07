@@ -4,7 +4,7 @@ const {log, color} = ConsoleService;
 
 class HelloCommand extends RWSCommand {
     constructor(){
-        super('hello', module);
+        super('hello');
     }
 
     async execute(params?: ICmdParams): Promise<void> {

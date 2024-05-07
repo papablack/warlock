@@ -10,6 +10,9 @@ node_modules
 @rws/
 !@rws/sample-pkg
 
+#rws ignores
+**/.rws.json
+
 #front dynamic content
 frontend/dist/*
 frontend/public/js/*
