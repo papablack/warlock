@@ -17,7 +17,7 @@ async function initializeApp() {
     theClient.setBackendRoutes(backendImports.backendRoutes());
     theClient.enableRouting();
         
-    theClient.onInit(async () => {
+    theClient.onInit(async () => {        
         RWSPlugin.getPlugin<RWSBrowserRouter>(RWSBrowserRouter).addRoutes(routes);
         _initComponents(theClient.appConfig.get('parted'));
     });    
