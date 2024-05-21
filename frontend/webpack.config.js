@@ -1,7 +1,6 @@
 const path = require('path');
 
 const RWSWebpackWrapper  = require('@rws-framework/client/rws.webpack.config');
-
 const executionDir = process.cwd();
 
 module.exports = RWSWebpackWrapper({
@@ -21,4 +20,8 @@ module.exports = RWSWebpackWrapper({
       './src/styles/compiled/main.css'
     ]
   },
+  rwsPlugins: [
+    '@rws-framework/nest-interconnectors',
+    '@rws-framework/browser-router'
+  ]
 });

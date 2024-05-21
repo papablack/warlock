@@ -11,7 +11,9 @@
     "author": "skygate",
     "license": "ISC",
     "dependencies": {
-        "@rws-framework/client": "^2.0.8",
+        "@rws-framework/client": "*",
+        "@rws-framework/nest-interconnectors": "*",
+        "@rws-framework/browser-router": "*",
         "@types/uuid": "^9.0.7",
         "alertifyjs": "^1.13.1",
         "css-loader": "^6.8.1",
