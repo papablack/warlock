@@ -1,5 +1,13 @@
+@import "@rws-mixins";
+
+$colorVariables: (
+  'primary_color': #c08d20,   
+  'secondary_color': #e2e4ec,  
+  'alt_color': #3f4042
+);
+
 :root {
-    --primary_color: #c08d20;    
-    --secondary_color: #e2e4ec;    
-    --alt_color: #3f4042;
-  }
+  @include vars($colorVariables);
+  @include darkreader-all-for-varmap($colorVariables);
+  @include darkreader-global();
+}

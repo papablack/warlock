@@ -8,7 +8,7 @@ import routes from './routing/routes';
 import backendImports from './backendImport';
 import notifierMethod from './_notifier';
 import _initComponents from './application/_initComponents';
-import { loadRWSRichWindow } from '@rws-framework/client/src/interfaces/RWSWindow';
+import { loadRWSRichWindow } from '@rws-framework/client/src/types/RWSWindow';
 
 
 async function initializeApp() {

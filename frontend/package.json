@@ -11,15 +11,16 @@
     "author": "skygate",
     "license": "ISC",
     "dependencies": {
-        "@rws-framework/client": "*",
-        "@rws-framework/nest-interconnectors": "*",
         "@rws-framework/browser-router": "*",
+        "@rws-framework/client": "^2.8.1",
+        "@rws-framework/nest-interconnectors": "0.3.0-alpha",
         "@types/uuid": "^9.0.7",
         "alertifyjs": "^1.13.1",
         "css-loader": "^6.8.1",
         "css-minimizer-webpack-plugin": "^5.0.1",
         "dragula": "^3.7.3",
         "he": "^1.2.0",
+        "html-loader": "^5.0.0",
         "html-webpack-plugin": "^5.6.0",
         "lodash": "^4.17.21",
         "moment": "^2.29.4",
@@ -52,6 +53,7 @@
         "typescript": "^5.1.6",
         "url-loader": "^4.1.1",
         "webpack": "^5.75.0",
+        "webpack-bundle-analyzer": "^4.10.2",
         "webpack-cli": "^5.1.4",
         "webpack-node-externals": "^3.0.0"
     }

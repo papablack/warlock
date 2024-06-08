@@ -8,7 +8,8 @@ RouterComponent;
 SiteMenu;
 
 @RWSView('default-layout', {
-    ignorePackaging: true
+    ignorePackaging: true,
+    debugPackaging: false
 })
 class DefaultLayout extends RWSViewComponent {  
   

@@ -1,7 +1,7 @@
 import { RWSViewComponent, RWSView } from '@rws-framework/client';
 
 
-@RWSView('page-home')
+@RWSView('page-home', { debugPackaging: false })
 class HomePage extends RWSViewComponent {  
   
     connectedCallback(): void 

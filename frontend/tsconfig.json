@@ -23,6 +23,7 @@
     "../node_modules/@rws-framework/client/types/declarations.d.ts"
   ],
   "exclude": [
-    "../node_modules/@rws-framework/client/tests"
+    "../node_modules/@rws-framework/client/tests",
+    "**/*.debug.ts"
   ]
 }
