@@ -1,14 +1,9 @@
-import { RWSService } from '@rws-framework/server';
+import { Injectable } from '@rws-framework/server/nest';
 
-import IVMConfig from '../interfaces/IRunpodCfg';
+import IVMConfig from '../types/IRunpodCfg';
 
-
-class RunpodService extends RWSService {
-    constructor(){
-        super();
-
-    }
-
+@Injectable()
+class RunpodService {
     async deployMachine(vmConfig: IVMConfig) {
       
     }
@@ -18,4 +13,4 @@ class RunpodService extends RWSService {
     }
 }
 
-export default RunpodService.getSingleton();
+export { RunpodService }

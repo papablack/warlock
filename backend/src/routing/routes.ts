@@ -1,6 +1,6 @@
-import {RWSHTTPRoutingEntry} from '@rws-framework/server';
+// import {RWSHTTPRoutingEntry} from '@rws-framework/server';
 
-export default (): RWSHTTPRoutingEntry[] => {
+export default (): any[] => {
     return [    
         // {
         //     prefix: '/api',

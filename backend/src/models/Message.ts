@@ -1,6 +1,6 @@
 import { RWSannotations, RWSModel } from '@rws-framework/server';
 
-import IMessage from './interfaces/IMessage';
+import IMessage from './types/IMessage';
 import 'reflect-metadata';
 
 const { TrackType } = RWSannotations.modelAnnotations;

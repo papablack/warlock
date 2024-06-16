@@ -2,11 +2,12 @@ import { IAppConfig } from '@rws-framework/server';
 
 import JWTUser from '../user/model';
 import { getModels } from '../models';
-import ControllerList from '../controllers/index';
+
 import routes from '../routing/routes';
 import ws_routes from '../routing/sockets';
 import CommandList from '../commands';
 import dotenv from 'dotenv';
+import { WarlockModule } from '../modules/warlock/warlock.module';
 
 
 export default (): IAppConfig => {
@@ -53,7 +54,7 @@ export default (): IAppConfig => {
         secret_key: '',
         user_class: JWTUser,
         user_models: getModels(),
-        controller_list: ControllerList,
+        modules: [WarlockModule],
         ws_routes: ws_routes,
         http_routes: routes(),
         commands: CommandList,
