@@ -1,8 +1,11 @@
 FROM thecooltechguy/comfyui_launcher:latest
 
+
+ENV ROOT_DIR /workspace
+
 COPY scripts /scripts
 COPY configs /configs
-COPY notebooks ${ROOT_DIR}/notebooks
+COPY notebooks/comfyui.ipynb ${ROOT_DIR}/notebooks/comfyui.ipynb
 
 COPY ./entrypoint.sh /scripts/entrypoint.sh
 # COPY ./requirements.txt /var/requirements.txt
@@ -31,7 +34,6 @@ ENV GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 # Set environment variables with default values
 
-ENV ROOT_DIR /workspace
 ENV APPZ_DIR ${ROOT_DIR}/appz
 
 RUN mkdir -p ${APPZ_DIR}
